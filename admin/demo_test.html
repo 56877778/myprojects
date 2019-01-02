@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="layout\js\jquery-3.1.1.min.js"></script>
+<style>
+.ancestors *
+{
+display: block;
+border: 2px solid lightgrey;
+color: lightgrey;
+padding: 5px;
+margin: 15px;
+}
+</style>
+<script>
+$(document).ready(function(){
+  $("span").parents("ul").css({"color":"red","border":"2px solid red"});
+});
+</script>
+<script src="../ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("span").parents("ul").css({"color":"red","border":"2px solid red"});
+});
+</script>
+<script>
+$(document).ready(function(){
+  $("li.start").next().css({"color":"red","border":"2px solid red"});
+});
+</script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+
+    $.post("demo_test_post.asp",
+    {
+      name:"Donald Duck",
+      city:"Duckburg"
+    },
+    function(data,status){
+      //alert("Data: " + data + "\nStatus: " + status);
+    });
+  });
+});
+</script>
+<script>
+$(document).ready(function(){
+  $("#btn1").click(function(){
+    alert("Text: " + $("#test").text());
+  });
+  $("#btn2").click(function(){
+    alert("HTML: " + $("#test").html());
+  });
+});
+</script>
+</head>
+<body >
+
+  <div style="width:500px;">
+
+  <p id="test">This is some <b>bold</b> text in a paragraph.</p>
+  <button id="btn1">Show Text</button>
+  <button id="btn2">Show HTML</button>
+<button>Send an HTTP POST request to a page and get the result back</button>
+</body>
+</html>
